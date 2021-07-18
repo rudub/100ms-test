@@ -1,0 +1,9 @@
+name: Deployment pipeline for python application
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  steps:
+    - uses: actions/checkout@v2
