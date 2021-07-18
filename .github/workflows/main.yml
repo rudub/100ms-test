@@ -29,6 +29,13 @@ jobs:
               docker build -t ruchi183/100ms:v1 .
               docker push ruchi183/100ms:v1
               
+      - name: AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ap-south-1
+          
       - name: helm deploy
         uses: koslib/helm-eks-action@master
         env:
