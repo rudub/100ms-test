@@ -1,5 +1,6 @@
-from flask import Flask, request, Response
-import requests
+from flask import Flask
+from flask import request
+from flask import Response
 
 app = Flask(__name__)
 
