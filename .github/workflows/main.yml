@@ -25,5 +25,7 @@ jobs:
         uses: actions/setup-python@v2
         
       - name: Build docker iamge
-        run: docker build -t ruchi183/100ms:v1 .
+        run: |
+              docker build -t ruchi183/100ms:v1 .
+              docker push ruchi183/100ms:v1
     
