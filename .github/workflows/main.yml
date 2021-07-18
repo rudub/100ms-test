@@ -28,4 +28,20 @@ jobs:
         run: |
               docker build -t ruchi183/100ms:v1 .
               docker push ruchi183/100ms:v1
+              
+      - name: 'Deploy'
+        uses: 'deliverybot/helm@v1'
+        with:
+          release: 'hundred-ms'
+          namespace: 'default'
+          chart: 'hundred-ms'
+          token: '${{ github.token }}'
+          values: |
+            name: hundred-ms
+            value-files: >-
+            [
+              "values.yaml", 
+            ]
+        env:
+          KUBECONFIG_FILE: '${{ secrets.KUBECONFIG }}'
     
