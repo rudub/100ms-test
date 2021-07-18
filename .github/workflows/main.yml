@@ -41,5 +41,5 @@ jobs:
         env:
           KUBE_CONFIG_DATA: ${{ secrets.KUBECONFIG }}
         with:
-          command: helm upgrade hundred-ms --install --wait hundred-ms -f values.yaml
+          command: helm status hundred-ms
     
